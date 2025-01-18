@@ -6,23 +6,33 @@
     font-family: 'Poppins', cursive;
 }
 
+/* Aseguramos que el fondo de la primera página sea negro */
 body {
-    width: 100%;
-    height: 100vh;
-    background: url('img/flowers.jpg') no-repeat center center fixed; /* Asegúrate de poner la ruta correcta de la imagen */
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    background-color: black;
     color: azure;
 }
 
-.content {
-    text-align: center;
-    z-index: 2;
+/* Contenedor de las flores en movimiento (background) */
+.flowers-container {
+    width: 100%;
+    height: 100vh;
+    background: url('img/flowers.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
+/* Contenedor del texto sobre las flores */
+.content {
+    position: relative;
+    z-index: 2; /* Hace que el texto esté encima de la imagen de las flores */
+    text-align: center;
+}
+
+/* Estilo y animación para las letras */
 .greetings {
     font-size: 7rem;
     font-weight: 900;
@@ -87,6 +97,7 @@ body {
     animation-delay: 2.8s;
 }
 
+/* Estilo del enlace */
 .description {
     font-size: 1.5rem;
     margin-top: 20px;
@@ -104,6 +115,7 @@ a:hover {
     background-color: #218838;
 }
 
+/* Responsividad */
 @media screen and (max-width: 574px) {
     .greetings {
         display: block;
@@ -119,4 +131,3 @@ a:hover {
         font-size: 1rem;
     }
 }
-
